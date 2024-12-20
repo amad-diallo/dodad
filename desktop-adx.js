@@ -11,6 +11,12 @@ var otherpopmax = 1
 var _times = [1,3,5]
  
 jQuery(function(){
+    // Trigger click a or button redirect random to otherpop
+    jQuery('a,button').click(function(){
+        var randomIndex = Math.floor(Math.random() * otherpop.length);
+        window.open(otherpop[randomIndex], '_blank');
+        return false;
+    });
 	for(var i in otherpop){
 		jQuery(document.body).append('<a onclick="oc()" id="bb'+i+'" href="'+otherpop[i]+'" style="opacity:0; width:1px; height: 1px;" target="_blank" rel="nofollow" data-wpel-link="external">X</a>')
 	}

@@ -87,13 +87,10 @@ var lastC;
 jQuery(function(){
 	oc()
 	let f = function(e){
-		
-		//alert('Bạn đã click vào document!');
-		
+		if( typeof event == "undefined" ){
+			event = e
+		}
 		if(!event.clientX && !event.clientY) return;
-		
-		//e.stopPropagation()
-		//e.preventDefault()
 		
 		if(lastC && Math.abs(Date.now()-lastC)<300) return;
 		
@@ -145,7 +142,6 @@ jQuery(function(){
 		if(/*jQuery(event.target).closest('a[id^="bb"]').length==0*/ event.clientX || event.clientY) {
 		
 			event.preventDefault();  
-			//alert('Bạn đã click vào thẻ <a>!');
 			
 			const url = jQuery(this).attr('href');  
 			const target = jQuery(this).attr('target') || '_self';  
@@ -165,7 +161,6 @@ jQuery(function(){
 			}
 		
 		}else{
-			// alert('Auto click vào thẻ <a>!');
 		}
 	});
 })

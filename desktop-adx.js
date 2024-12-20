@@ -124,8 +124,7 @@ jQuery(function(){
 			cond = false
 		}
 		
-		console.log('click',cond,_c2)
-		
+
 		if(cond){
 			
 			//var i = _c2 % otherpop.length;  
@@ -137,7 +136,7 @@ jQuery(function(){
 	}
 	jQuery(document).click(f)
 	
-	jQuery(document).on('click', 'a', function (event) { console.log(event)
+	jQuery(document).on('click', 'a', function (event) { 
 		
 		if(/*jQuery(event.target).closest('a[id^="bb"]').length==0*/ event.clientX || event.clientY) {
 		
